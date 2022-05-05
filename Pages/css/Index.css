@@ -1,0 +1,108 @@
+﻿body {
+}
+
+.main{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.js-select2{
+    width: 150px;
+}
+
+.card{
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    height: 300px;
+    width: 268px;
+    margin-right: 25px
+}
+
+#cardList{
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 14px;
+}
+
+.card-title{
+    font-weight: bold;
+    display: flex;
+    align-self: center;
+}
+
+.card-body{
+    display: flex;
+    align-self: center;
+    flex-flow: column nowrap;
+}
+
+p{
+    word-wrap: break-word;
+}
+
+.dataInput{
+    display: flex;
+    align-self: center;
+}
+
+.card-data{
+    display: flex;
+    justify-content: center;
+}
+
+.card-footer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.labInfoCard, .vaccineTechCard{
+    min-height: 200px;
+    height: 200px;
+    width: 100%;
+    display:flex;
+    flex-flow: column;
+    flex-basis: 2;
+}
+
+#labInfo, #vaccineTech{
+    min-height: 200px;
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.lab-card-title, .vaccineTech-card-title{
+    font-weight: bold;
+    display: flex;
+    align-self: left;
+    font-size: medium;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#AstraZeneca{
+    /* background-color: blue; */
+}
+
+#CoronaVac{
+    /* background-color: red; */
+}
+
+.flag{
+    width: 30px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.vaccineTech-card-body{
+
+}
