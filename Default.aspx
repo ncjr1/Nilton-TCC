@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Nilton_TCC.Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Nilton_TCC.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="Pages/js/Index.js"></script>
     <link rel="stylesheet" href="Pages/css/Index.css"/>
@@ -8,7 +8,7 @@
     <script src="Plugins/notify.min.js" crossorigin="anonymous"></script>
     <script src="Scripts/moment.js"></script>
     <div class="main">
-        <h1>Teste</h1>
+        <h1>Informativo</h1>
         <div class="row" style="margin-bottom: 10%;">
             <div class="col-4">
                 <%--<select id="ddlLab" class="js-select2"></select>--%>
@@ -19,6 +19,7 @@
         <div class="row" id="cardList"></div>
         <h3 id="intervalo"></h3>
         <div id="labInfo"></div>
+        <h3 id="vacTitle" hidden>Tecnologias</h3>
         <div id="vaccineTech"></div>
     </div>
 </asp:Content>

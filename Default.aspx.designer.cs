@@ -11,7 +11,7 @@ namespace Nilton_TCC
 {
 
 
-    public partial class Index
+    public partial class Default
     {
     }
 }

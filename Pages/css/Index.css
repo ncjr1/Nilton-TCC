@@ -70,12 +70,12 @@ p{
     flex-basis: 2;
 }
 
-#labInfo, #vaccineTech{
+#labInfo{
     min-height: 200px;
     position: relative;
     bottom: 0px;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     width: 100%;
     margin-top: 5%;
 }
@@ -105,4 +105,14 @@ p{
 
 .vaccineTech-card-body{
 
+}
+
+#vaccineTech{
+    min-height: 200px;
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin-top: 5%;
 }
