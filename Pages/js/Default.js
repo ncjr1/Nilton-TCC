@@ -47,14 +47,14 @@
             if(!this.Validar()) return;
             let Labs = this.Labs;
             att.primeiro ? att.numDoses++ : "";
-            if(att.numDoses > 3){
+            if(att.numDoses > 2){
                 $(e.currentTarget).prop("disabled", true);
                 $(`#ddlLab${att.numDoses - 1}`).prop("disabled", true);
                 $(`#txtData${att.numDoses - 1}`).prop("disabled", true);
-                $("#intervalo").html(`Parabens, você já está Imunizado(a)!`);
+                $("#intervalo").html(`Parabéns, você já está Imunizado(a)!`);
                 this.AddSet($(`#ddlLab${att.numDoses - 1}`).val());
             }else{
-                if(att.numDoses == 3){
+                if(att.numDoses == 2){
                     Labs.splice(3);
                     $("#cardList").append(`
                     <div class="col-3" id="${att.numDoses}">
