@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Nilton_TCC.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="Pages/js/Index.js"></script>
-    <link rel="stylesheet" href="Pages/css/Index.css"/>
+    <script src="Pages/js/Default.js"></script>
+    <link rel="stylesheet" href="Pages/css/Default.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
     <script src="https://kit.fontawesome.com/17341450f5.js" crossorigin="anonymous"></script>

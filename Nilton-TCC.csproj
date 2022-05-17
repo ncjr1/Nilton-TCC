@@ -141,13 +141,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Default.aspx" />
-    <Content Include="Pages\css\Index.css" />
+    <Content Include="Pages\css\Default.css" />
     <Content Include="images\Astrazeneca.svg" />
     <Content Include="images\Coronavac.svg" />
     <Content Include="images\Janssen.svg" />
     <Content Include="images\Pfizer.svg" />
     <Content Include="images\Sputnik.svg" />
-    <Content Include="Pages\js\Index.js" />
+    <Content Include="Pages\js\Default.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

@@ -18,7 +18,7 @@
                     <h4 class="card-title">${att.numDoses}ª Dose</h1>
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Laboratório</label>
+                            <label>Laboratório / Vacina</label>
                             <select id="ddlLab${att.numDoses}" class="form-control">
                                 <option value="">Selecione</option>
                                 ${this.Labs.map(x => `
@@ -62,7 +62,7 @@
                             <h4 class="card-title">${att.numDoses}ª Dose</h1>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label>Laboratório</label>
+                                    <label>Laboratório / Vacina</label>
                                     <select id="ddlLab${att.numDoses}" class="form-control">
                                         <option value="">Selecione</option>
                                         ${Labs.map(x => `
@@ -180,7 +180,7 @@
                     
             case "CoronaVac":
                 return `<ul>
-                            <li>Produzida no Brasil pelo Instituto Butantan, em parceria com a fabricante chinesa de medicamentos Sinovac Biotech. O Instituto Butantan é o maior produtor de vacinas e soros da América Latina e o principal produtor de imunobiológicos do Brasil. A CoronaVac utiliza a tecnologia Antígeno do Vírus Inativado.</li>
+                            <li>Envasada no Brasil pelo Instituto Butantan, em parceria com a fabricante chinesa de medicamentos Sinovac Biotech. O Instituto Butantan é o maior produtor de vacinas e soros da América Latina e o principal produtor de imunobiológicos do Brasil. A CoronaVac utiliza a tecnologia Antígeno do Vírus Inativado.</li>
                             <li>Segundo a bula, a faixa etária autorizada é a partir de 6 anos e com um intervalo de 4 semanas entre as doses.</li>
                             <li><a target="_blank" rel="noopener noreferrer" href="https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/bulas-e-rotulos/bulas-uso-emergencial/vacinas/bula-coronavac-atualizada.pdf">Acesse a Bula</a></li>    
                         </ul>`;
