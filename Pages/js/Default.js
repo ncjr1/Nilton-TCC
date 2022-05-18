@@ -6,11 +6,10 @@
 
     Iniciar(){
         this.LabsSelecionados = new Set();
-        this.Labs = [ {"id" : "1", "nome" : "AstraZeneca"}, 
-                      {"id" : "2", "nome" : "CoronaVac"}, 
-                      {"id" : "3", "nome" : "Pfizer"},
-                      {"id" : "4", "nome" : "Janssen"},
-                      ]  
+        this.Labs = [ {"nome" : "AstraZeneca"}, 
+                      {"nome" : "CoronaVac"}, 
+                      {"nome" : "Pfizer"},
+                      {"nome" : "Janssen"}]  
         $(".js-select2").select2();
         $("#cardList").append(`
             <div class="col-3">
