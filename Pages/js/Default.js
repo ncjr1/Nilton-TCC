@@ -114,7 +114,7 @@
                 break;
                 
             default:
-                console.log("Ocorreu um erro! -labDescription- ");
+                console.log(`Ocorreu um erro no AddLabCardDescription()! ${labName}`);
                 break;
         }
 
@@ -202,7 +202,7 @@
                 break;
                 
             default:
-                console.log("Ocorreu um erro! -Tech- ");
+                console.log(`Ocorreu um erro no AddTechnology()! ${labName}`);
                 break;
         }
     }
@@ -229,7 +229,7 @@
                 break;
                 
             default:
-                console.log("Ocorreu um erro!");
+                console.log(`Ocorreu um erro no SetIntervalo()! ${labName}, ${data}`);
                 break;
         }
     }
@@ -253,7 +253,7 @@
                 break;
                 
             default:
-                console.log("Ocorreu um erro!");
+                console.log(`Ocorreu um erro no CalculaTempo()! ${labName}, ${dataInformada}`);
                 break;
         }
         att.dataDoseAnterior = this.FormatarData(date);
@@ -335,7 +335,7 @@
                         <h4 class="card-title">${att.numDoses}ª Dose</h1>
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Laboratório</label>
+                                <label>Laboratório / Vacina</label>
                                 <select id="ddlLab${att.numDoses}" class="form-control">
                                     <option value="">Selecione</option>
                                     ${Labs.filter(x => $(`#ddlLab${att.numDoses - 1}`).val() == x.nome).map(x => `
