@@ -45,7 +45,7 @@
             e.preventDefault();
             if(!this.Validar()) return;
             let Labs = this.Labs;
-            att.primeiro ? att.numDoses++ : "";
+            att.numDoses++;
             if(att.numDoses > 2){
                 $(e.currentTarget).prop("disabled", true);
                 $(`#ddlLab${att.numDoses - 1}`).prop("disabled", true);
@@ -53,71 +53,13 @@
                 $("#intervalo").html(`Parabéns, você já está Imunizado(a)!`);
                 this.AddSet($(`#ddlLab${att.numDoses - 1}`).val());
             }else{
-                if(att.numDoses == 2){
-                    Labs.splice(3);
-                    $("#cardList").append(`
-                    <div class="col-3" id="${att.numDoses}">
-                        <div class="card">
-                            <h4 class="card-title">${att.numDoses}ª Dose</h1>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>Laboratório / Vacina</label>
-                                    <select id="ddlLab${att.numDoses}" class="form-control">
-                                        <option value="">Selecione</option>
-                                        ${Labs.map(x => `
-                                            <option value="${x.nome}">${x.nome}</option>
-                                        `)}
-                                    </select>
-                                    <div class="invalid-feedback animated fadeInDown text-danger"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Data da Vacinação</label>
-                                    <input type="date" class="dataInput form-control" id="txtData${att.numDoses}"/>
-                                    <div class="invalid-feedback animated fadeInDown text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btnOutroCard"><i class="fas fa-plus"></i> Dose</button>
-                            </div>
-                        </div>
-                    </div>
-                    `);
-                }else{
-                    $(`#ddlLab${att.numDoses - 1}`).val() == "Janssen" ? "" :
-                    $("#cardList").append(`
-                    <div class="col-3" id="${att.numDoses}">
-                        <div class="card">
-                            <h4 class="card-title">${att.numDoses}ª Dose</h1>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>Laboratório</label>
-                                    <select id="ddlLab${att.numDoses}" class="form-control">
-                                        <option value="">Selecione</option>
-                                        ${Labs.filter(x => $(`#ddlLab${att.numDoses - 1}`).val() == x.nome).map(x => `
-                                            <option value="${x.nome}">${x.nome}</option>
-                                        `)}
-                                    </select>
-                                    <div class="invalid-feedback animated fadeInDown text-danger"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Data da Vacinação</label>
-                                    <input type="date" class="dataInput form-control" id="txtData${att.numDoses}"/>
-                                    <div class="invalid-feedback animated fadeInDown text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btnOutroCard"><i class="fas fa-plus"></i> Dose</button>
-                            </div>
-                        </div>
-                    </div>
-                    `);
-                }
+                Labs.splice(3);
+                $(`#ddlLab${att.numDoses - 1}`).val() != "Janssen" ? this.MontarCard(Labs) : "";
                 this.AddSet($(`#ddlLab${att.numDoses - 1}`).val());
                 $(e.currentTarget).prop("disabled", true);
                 $(`#ddlLab${att.numDoses - 1}`).prop("disabled", true);
                 $(`#txtData${att.numDoses - 1}`).prop("disabled", true);
                 this.SetIntervalo($(`#ddlLab${att.numDoses - 1}`).val(), moment($(`#txtData${att.numDoses - 1}`).val())._i);
-                att.primeiro ? "" : att.numDoses++;
             }
         });   
     }
@@ -386,6 +328,35 @@
             this.AddTechnology(labName);
             att.setCount = this.LabsSelecionados.size;
         }
+    }
+    MontarCard(Labs){
+        $("#cardList").append(`
+                        <div class="col-3" id="${att.numDoses}">
+                            <div class="card">
+                                <h4 class="card-title">${att.numDoses}ª Dose</h1>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Laboratório</label>
+                                        <select id="ddlLab${att.numDoses}" class="form-control">
+                                            <option value="">Selecione</option>
+                                            ${Labs.filter(x => $(`#ddlLab${att.numDoses - 1}`).val() == x.nome).map(x => `
+                                                <option value="${x.nome}">${x.nome}</option>
+                                            `)}
+                                        </select>
+                                        <div class="invalid-feedback animated fadeInDown text-danger"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Data da Vacinação</label>
+                                        <input type="date" class="dataInput form-control" id="txtData${att.numDoses}"/>
+                                        <div class="invalid-feedback animated fadeInDown text-danger"></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btnOutroCard"><i class="fas fa-plus"></i> Dose</button>
+                                </div>
+                            </div>
+                        </div>
+                    `);
     }
 }
 
