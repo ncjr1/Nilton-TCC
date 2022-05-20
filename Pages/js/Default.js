@@ -1,9 +1,11 @@
-﻿class Index {
+﻿// Autor: Nilton Cosme Felix da Costa Junior
+class Index {
     constructor(){
         this.Iniciar();
         this.Eventos();
     }
 
+    //Inicialização das variáveis e chamadas para a aplicação
     Iniciar(){
         this.LabsSelecionados = new Set();
         this.Labs = [ {"nome" : "AstraZeneca"}, 
@@ -13,6 +15,8 @@
         $(".js-select2").select2();
         this.MontarCard(this.Labs, true);
     }
+
+    //Eventos da Página
     Eventos(){
         $("body").on("click", ".btnOutroCard", (e) => {
             e.preventDefault();
@@ -33,6 +37,8 @@
             $(`#txtData${att.numDoses - 1}`).prop("disabled", true);
         });   
     }
+
+    //Realiza a validação dos valores inseridos nos campos
     Validar(){
         let ok = true;
         let msg = "";
@@ -60,11 +66,17 @@
 
         return ok;
     }
+
+    //Mostra a mensagem de erro no canto superior esquerdo da tela
+    //String texto
     ErrorMessage(texto) {
         var background;
         background = "warning";
         $.notify(texto, { z_index: 2000, type: background });
     }
+
+    //Adiciona um card ao container de cards do laboratório
+    //String labName
     AddLabCard(labName){
         $("#labInfo").append(`
             <div class="labInfoCard" id="${labName}">
@@ -78,6 +90,9 @@
             </div>
         `);
     }
+
+    //Adiciona a Descrição no body do card de laboratório dependendo do laboratório passado no parâmetro 
+    //String labName
     AddLabCardDescription(labName){
         let description = "";
         switch (labName) {
@@ -120,6 +135,9 @@
 
         return description;
     }
+
+    //Adiciona um Card com o texto sobre a tecnologia da vacina feita pelo laboratório passado no parâmetro
+    //String labName
     AddTechnology(labName){
         $("#vacTitle").prop("hidden", false);
         switch (labName) {
@@ -206,6 +224,10 @@
                 break;
         }
     }
+
+    //Mostra na tela a data calculada pelo método CalculaTempo que é recomendada para a aplicação da segunda dose
+    //String labName
+    //Date data 
     SetIntervalo(labName, data){
         switch (labName) {
             case "AstraZeneca":
@@ -233,6 +255,10 @@
                 break;
         }
     }
+
+    //Realiza o calculo da data recomendada para a aplicação da segunda dose
+    //String labName
+    //Date dataInformada
     CalculaTempo(labName, dataInformada){
         let date ="";
         switch (labName) {
@@ -260,12 +286,18 @@
         console.log(att.dataDoseAnterior);
         return this.FormatarData(date);
     }
+
+    //Formata a data passada no parâmetro do formato americano para o formato brasileiro
+    //Date data
     FormatarData(data){
         if(data != undefined || data != ""){
             let arrData =  data.split("/");
             return arrData[1] + "/" + arrData[0] + "/" + arrData[2];
         } 
     }
+
+    //Adiciona no Set a string referente ao laboratório passado no parâmetro
+    //String labName
     AddSet(labName){
         switch (labName) {
             case "AstraZeneca":
@@ -289,7 +321,7 @@
                 break;
                 
             default:
-                console.log("Ocorreu um erro!");
+                console.log(`Ocorreu um erro no AddSet()! ${labName}`);
                 break;
         }
                 
@@ -299,6 +331,10 @@
             att.setCount = this.LabsSelecionados.size;
         }
     }
+
+    //Monta o Card com os campos na tela 
+    //array Labs
+    //bool primeiroCard
     MontarCard(Labs, primeiroCard){
         primeiroCard == true ? 
             $("#cardList").append(`
