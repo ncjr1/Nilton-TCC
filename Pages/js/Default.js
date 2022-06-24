@@ -53,12 +53,17 @@ class Index {
             return teste;
         }
 
+        
+
         VerificarCampo($(`#ddlLab${att.numDoses}`).val() == "", "O Campo Laboratório é obrigatório", `#ddlLab${att.numDoses}`);
         VerificarCampo($(`#txtData${att.numDoses}`).val() == "", "O Campo Data de Vacinação é obrigatório", `#txtData${att.numDoses}`);
-
-        if(att.numDoses > 1){
-            VerificarCampo(moment($(`#txtData${att.numDoses}`).val()).isBefore(att.dataDoseAnterior.split("/").reverse().join("-"), "day") , `A ${att.numDoses}ª Dose deve ser tomada depois de ${att.dataDoseAnterior}`, `#txtData${att.numDoses}`);
+        if($(`#txtData${att.numDoses}`).val() != ""){
+            if(att.numDoses > 1){
+                VerificarCampo(moment($(`#txtData${att.numDoses}`).val()).isBefore(att.dataDoseAnterior.split("/").reverse().join("-"), "day") , `A ${att.numDoses}ª Dose deve ser tomada depois de ${att.dataDoseAnterior}`, `#txtData${att.numDoses}`);
+            }
         }
+
+        
 
         if(!ok){
             this.ErrorMessage(msg);

@@ -8,7 +8,6 @@
     <script src="Plugins/notify.min.js" crossorigin="anonymous"></script>
     <script src="Scripts/moment.js"></script>
     <div class="main">
-        <h1>Informativo</h1>
         <div class="row" style="margin-bottom: 10%;">
             <div class="col-4">
                 <%--<select id="ddlLab" class="js-select2"></select>--%>
